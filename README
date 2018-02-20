@@ -1,0 +1,5 @@
+First of all, please, create database which code is inserted in Database.sql  file
+Please note that broject is created with Netbeans IDE (https://netbeans.org/)
+Project runs on tomcat server (http://tomcat.apache.org/)
+In project have used Spring 4.0.1, JSF 2.2 and Hibernate 4.3
+Please see also Web_Pages.png, Source_Packages.png and Project_Construction.png files
