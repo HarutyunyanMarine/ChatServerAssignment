@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd"
+       >
+
+    <bean id="conversationController"
+          class="com.chatserverassignment.controller.ConversationController">
+        <property name="conversationService" ref="conversationService" />
+        <property name="messageService" ref="messageService" />
+        <property name="conversation" ref="conversation" />
+    </bean>
+    <bean id="conversationService" 
+              class="com.chatserverassignment.service.impl.ConversationServiceImpl" >
+        <property name="dao" ref="dao" />
+        <property name="messageDao" ref="messageDao" />
+        
+    </bean>
+
+    <bean id="dao"
+              class="com.chatserverassignment.dao.impl.ConversationDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+<!--    <bean id="conversation"
+              class="com.chatserverassignment.model.Conversation">
+        <property name="messages" ref="messages" />
+    </bean>-->
+    <bean id="conversation" class="com.chatserverassignment.model.Conversation">
+    <!-- java.util.List -->
+    <property name="messages">
+      <util:list list-class="java.util.ArrayList" value-type="com.chatserverassignment.model.Message">
+        <!--<ref bean="message"/>-->
+      </util:list>
+    </property>
+    
+  </bean>
+  
+    
+</beans>

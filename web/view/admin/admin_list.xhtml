@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Admin list</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top" class="top">
+            <ui:insert name="top">Top</ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">
+                <h:form>
+                    <h:commandLink value="+ Add user" action="add_user.xhtml"/>
+                </h:form>
+
+                <h:form>
+                    <table class="tg">
+                        <tr>
+                            <th width="80">Person ID</th>
+                            <th width="200">Person Name</th>
+                            <th width="200">Type</th>
+                            <th width="200"></th>
+                        </tr>
+                        <ui:repeat value="#{userController.all()}" var="person">
+                            <tr>
+                                <td>#{person.id}</td>
+                                <td>#{person.username}</td>
+                                <td>#{person.type}</td>
+                                <td>
+                                    <h:commandButton  value="Delete" action="#{userController.delete(person)}">
+                                        <f:ajax render="content"/>
+                                    </h:commandButton>
+                                    <h:commandButton  value="Update" action="update_user.xhtml"/>
+                                </td>
+                            </tr>
+                        </ui:repeat>
+                    </table>
+                </h:form>
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>

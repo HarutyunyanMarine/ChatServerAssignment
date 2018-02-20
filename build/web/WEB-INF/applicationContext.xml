@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- Database Configuration -->
+    <import resource="classes/com/chatserverassignment/config/DataSource.xml"/>
+    <import resource="classes/com/chatserverassignment/config/HibernateSessionFactory.xml"/>
+
+    <!-- Beans Declaration -->
+    <import resource="classes/com/chatserverassignment/model/user.xml"/>
+    <import resource="classes/com/chatserverassignment/model/conversation.xml"/>
+    <import resource="classes/com/chatserverassignment/model/message.xml"/>
+
+</beans>

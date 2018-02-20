@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="view/admin/add_user.xhtml" x="51" y="75" zoom="true"/>
+        <Node id="index.xhtml" x="409" y="41" zoom="true"/>
+        <Node id="view/user/user_list.xhtml" x="574" y="120" zoom="true"/>
+        <Node id="view/admin/update_user.xhtml" x="-37" y="143" zoom="true"/>
+        <Node id="view/user/reg.xhtml" x="428" y="204" zoom="true"/>
+        <Node id="view/admin/admin_list.xhtml" x="96" y="239" zoom="true"/>
+        <Node id="view/user/chat.xhtml" x="589" y="300" zoom="true"/>
+        <Node id="view/user/a.xhtml" x="150" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
